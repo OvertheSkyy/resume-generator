@@ -1,6 +1,6 @@
 ﻿namespace contact_tracing
 {
-    partial class personalInfoForm
+    partial class resumeInfoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -1081,7 +1081,7 @@
             this.label18.TabIndex = 237;
             this.label18.Text = "CERTIFICATE 2:";
             // 
-            // personalInfoForm
+            // resumeInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1176,7 +1176,7 @@
             this.Controls.Add(this.firstNameLabel);
             this.Controls.Add(this.lastNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "personalInfoForm";
+            this.Name = "resumeInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resume Generator";
             this.Load += new System.EventHandler(this.Form2_Load);

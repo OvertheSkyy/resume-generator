@@ -88,9 +88,9 @@
             this.seePersonInfoComboBox.FormattingEnabled = true;
             this.seePersonInfoComboBox.Items.AddRange(new object[] {
             ""});
-            this.seePersonInfoComboBox.Location = new System.Drawing.Point(155, 101);
+            this.seePersonInfoComboBox.Location = new System.Drawing.Point(105, 97);
             this.seePersonInfoComboBox.Name = "seePersonInfoComboBox";
-            this.seePersonInfoComboBox.Size = new System.Drawing.Size(367, 21);
+            this.seePersonInfoComboBox.Size = new System.Drawing.Size(567, 21);
             this.seePersonInfoComboBox.TabIndex = 24;
             this.seePersonInfoComboBox.SelectedIndexChanged += new System.EventHandler(this.seePersonInfoComboBox_SelectedIndexChanged);
             // 
@@ -99,7 +99,7 @@
             this.JSONFileLabel.AutoSize = true;
             this.JSONFileLabel.BackColor = System.Drawing.Color.Transparent;
             this.JSONFileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JSONFileLabel.Location = new System.Drawing.Point(44, 105);
+            this.JSONFileLabel.Location = new System.Drawing.Point(17, 101);
             this.JSONFileLabel.Name = "JSONFileLabel";
             this.JSONFileLabel.Size = new System.Drawing.Size(82, 12);
             this.JSONFileLabel.TabIndex = 25;
@@ -119,7 +119,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 62);
+            this.label1.Location = new System.Drawing.Point(17, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 12);
             this.label1.TabIndex = 32;
@@ -127,21 +127,22 @@
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(155, 58);
+            this.lastNameTextBox.Location = new System.Drawing.Point(105, 58);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(120, 20);
+            this.lastNameTextBox.Size = new System.Drawing.Size(137, 20);
             this.lastNameTextBox.TabIndex = 33;
+            this.lastNameTextBox.TextChanged += new System.EventHandler(this.lastNameTextBox_TextChanged);
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(296, 58);
+            this.firstNameTextBox.Location = new System.Drawing.Point(248, 58);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(146, 20);
+            this.firstNameTextBox.Size = new System.Drawing.Size(194, 20);
             this.firstNameTextBox.TabIndex = 34;
             // 
             // middleInitialTextBox
             // 
-            this.middleInitialTextBox.Location = new System.Drawing.Point(464, 58);
+            this.middleInitialTextBox.Location = new System.Drawing.Point(453, 58);
             this.middleInitialTextBox.Name = "middleInitialTextBox";
             this.middleInitialTextBox.Size = new System.Drawing.Size(100, 20);
             this.middleInitialTextBox.TabIndex = 35;
@@ -151,7 +152,7 @@
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.lastNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameLabel.Location = new System.Drawing.Point(177, 81);
+            this.lastNameLabel.Location = new System.Drawing.Point(134, 81);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(77, 13);
             this.lastNameLabel.TabIndex = 87;
@@ -162,7 +163,7 @@
             this.firstNameLabel.AutoSize = true;
             this.firstNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.firstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameLabel.Location = new System.Drawing.Point(330, 81);
+            this.firstNameLabel.Location = new System.Drawing.Point(293, 81);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(82, 13);
             this.firstNameLabel.TabIndex = 88;
@@ -173,7 +174,7 @@
             this.middleInitialLabel.AutoSize = true;
             this.middleInitialLabel.BackColor = System.Drawing.Color.Transparent;
             this.middleInitialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.middleInitialLabel.Location = new System.Drawing.Point(462, 81);
+            this.middleInitialLabel.Location = new System.Drawing.Point(449, 81);
             this.middleInitialLabel.Name = "middleInitialLabel";
             this.middleInitialLabel.Size = new System.Drawing.Size(102, 13);
             this.middleInitialLabel.TabIndex = 90;
@@ -226,6 +227,7 @@
             this.closeBtn.TabIndex = 135;
             this.closeBtn.Text = "CLOSE";
             this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // seeFilesForm
             // 
@@ -279,7 +281,6 @@
         private System.Windows.Forms.Button saveAsPDF;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label appName;
-        private RoundButton roundButton1;
         private System.Windows.Forms.Button closeBtn;
     }
 }

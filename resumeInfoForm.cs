@@ -6,11 +6,11 @@ using System.Threading;
 
 namespace contact_tracing
 {
-    public partial class personalInfoForm : Form
+    public partial class resumeInfoForm : Form
     {
         Thread thread;
 
-        public personalInfoForm()
+        public resumeInfoForm()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace contact_tracing
 
             JSON resumeInfo = new JSON
             {
-                yourName = firstNameTextBox.Text + middleInitialTextBox.Text + lastNameTextBox.Text,
+                yourName = firstNameTextBox.Text + " " + middleInitialTextBox.Text + " " + lastNameTextBox.Text,
                 yourPhone = mobileNumberTextBox.Text,
                 yourEmail = emailTextBox.Text,
                 yourAddress = addressTextBox.Text,
@@ -70,11 +70,10 @@ namespace contact_tracing
                 certificate1 = certificate1TextBox.Text,
                 certificate2 = certificate2TextBox.Text,
                 certificate3 = certificate3TextBox.Text,
-
-                };
+              };
 
                 string JsonOutput = JsonConvert.SerializeObject(resumeInfo);
-                File.WriteAllText(@"E:\Desktop\C#-resume-generator\2019\" + lastNameTextBox.Text + "_" + firstNameTextBox.Text + ".json", JsonOutput);
+                File.WriteAllText(@"E:\Desktop\resume-generator\resume-generator\JSON files\" + lastNameTextBox.Text + "_" + firstNameTextBox.Text + ".json", JsonOutput);
             
         }
 

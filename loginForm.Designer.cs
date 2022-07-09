@@ -42,7 +42,7 @@
             this.verLabel = new System.Windows.Forms.Label();
             this.aboutBtn = new System.Windows.Forms.Button();
             this.appNameLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginBtn = new System.Windows.Forms.Button();
             this.designPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -67,14 +67,14 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.Gray;
+            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
             this.exitBtn.FlatAppearance.BorderSize = 0;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.ForeColor = System.Drawing.Color.Black;
-            this.exitBtn.Location = new System.Drawing.Point(82, 344);
+            this.exitBtn.Location = new System.Drawing.Point(70, 344);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(71, 30);
+            this.exitBtn.Size = new System.Drawing.Size(91, 30);
             this.exitBtn.TabIndex = 5;
             this.exitBtn.Text = "Exit App";
             this.exitBtn.UseVisualStyleBackColor = false;
@@ -84,7 +84,7 @@
             // 
             this.designPanel.BackColor = System.Drawing.Color.White;
             this.designPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.designPanel.Controls.Add(this.button1);
+            this.designPanel.Controls.Add(this.loginBtn);
             this.designPanel.Controls.Add(this.usernameTextBox);
             this.designPanel.Controls.Add(this.personPictureBox);
             this.designPanel.Controls.Add(this.contactInfoLabel);
@@ -174,14 +174,14 @@
             // 
             // aboutBtn
             // 
-            this.aboutBtn.BackColor = System.Drawing.Color.Gray;
+            this.aboutBtn.BackColor = System.Drawing.Color.Transparent;
             this.aboutBtn.FlatAppearance.BorderSize = 0;
             this.aboutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aboutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutBtn.ForeColor = System.Drawing.Color.Black;
-            this.aboutBtn.Location = new System.Drawing.Point(82, 310);
+            this.aboutBtn.Location = new System.Drawing.Point(70, 310);
             this.aboutBtn.Name = "aboutBtn";
-            this.aboutBtn.Size = new System.Drawing.Size(71, 30);
+            this.aboutBtn.Size = new System.Drawing.Size(97, 30);
             this.aboutBtn.TabIndex = 4;
             this.aboutBtn.Text = "About App";
             this.aboutBtn.UseVisualStyleBackColor = false;
@@ -193,26 +193,27 @@
             this.appNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.appNameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.appNameLabel.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.appNameLabel.Location = new System.Drawing.Point(38, 9);
+            this.appNameLabel.Location = new System.Drawing.Point(29, 7);
             this.appNameLabel.Name = "appNameLabel";
             this.appNameLabel.Size = new System.Drawing.Size(201, 23);
             this.appNameLabel.TabIndex = 67;
             this.appNameLabel.Text = "RESUME GENERATOR";
             this.appNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // loginBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(82, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 30);
-            this.button1.TabIndex = 79;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.loginBtn.BackColor = System.Drawing.Color.Transparent;
+            this.loginBtn.FlatAppearance.BorderSize = 0;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.ForeColor = System.Drawing.Color.Black;
+            this.loginBtn.Location = new System.Drawing.Point(81, 274);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(71, 30);
+            this.loginBtn.TabIndex = 80;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // loginForm
             // 
@@ -220,7 +221,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(264, 423);
+            this.ClientSize = new System.Drawing.Size(263, 423);
             this.Controls.Add(this.appNameLabel);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -252,8 +253,7 @@
         private System.Windows.Forms.PictureBox personPictureBox;
         private System.Windows.Forms.Label appNameLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
-        private RoundButton loginBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginBtn;
     }
 }
 

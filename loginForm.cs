@@ -23,6 +23,25 @@ namespace contact_tracing
         {
             passwordTextBox.PasswordChar = '*';
         }
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            string username = usernameTextBox.Text;
+            string password = passwordTextBox.Text;
+
+
+            if ((username == "") || (password == ""))
+            {
+                MessageBox.Show("Invalid login credentials!");
+            }
+            else if (username == usernameTextBox.Text || password == passwordTextBox.Text)
+            {
+                MessageBox.Show("Welcome back," + " " + usernameTextBox.Text + "!");
+                this.Close();
+                thread = new Thread(openNewForm);
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
+            }
+        }
 
         private void loginBtn_Click_1(object sender, EventArgs e)
         {
@@ -47,7 +66,7 @@ namespace contact_tracing
 
         private void openNewForm()
         {
-            Application.Run(new personalInfoForm());
+            Application.Run(new resumeInfoForm());
         }
 
         private void aboutBtn_Click(object sender, EventArgs e)
@@ -60,5 +79,6 @@ namespace contact_tracing
         {
             this.Close();
         }
+
     }
 }
