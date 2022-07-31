@@ -33,7 +33,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
             this.designPanel = new System.Windows.Forms.Panel();
-            this.loginBtn = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.personPictureBox = new System.Windows.Forms.PictureBox();
             this.contactInfoLabel = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.verLabel = new System.Windows.Forms.Label();
             this.aboutBtn = new System.Windows.Forms.Button();
             this.appNameLabel = new System.Windows.Forms.Label();
+            this.loginBtn = new System.Windows.Forms.Button();
             this.designPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -99,21 +99,6 @@
             this.designPanel.Name = "designPanel";
             this.designPanel.Size = new System.Drawing.Size(233, 377);
             this.designPanel.TabIndex = 66;
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.BackColor = System.Drawing.Color.Transparent;
-            this.loginBtn.FlatAppearance.BorderSize = 0;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.ForeColor = System.Drawing.Color.Black;
-            this.loginBtn.Location = new System.Drawing.Point(81, 274);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(71, 30);
-            this.loginBtn.TabIndex = 80;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = false;
-            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // usernameTextBox
             // 
@@ -210,16 +195,31 @@
             this.appNameLabel.ForeColor = System.Drawing.SystemColors.MenuText;
             this.appNameLabel.Location = new System.Drawing.Point(29, 7);
             this.appNameLabel.Name = "appNameLabel";
-            this.appNameLabel.Size = new System.Drawing.Size(211, 23);
+            this.appNameLabel.Size = new System.Drawing.Size(201, 23);
             this.appNameLabel.TabIndex = 67;
-            this.appNameLabel.Text = "MINUTES GENERATOR";
+            this.appNameLabel.Text = "RESUME GENERATOR";
             this.appNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // loginBtn
+            // 
+            this.loginBtn.BackColor = System.Drawing.Color.Transparent;
+            this.loginBtn.FlatAppearance.BorderSize = 0;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.ForeColor = System.Drawing.Color.Black;
+            this.loginBtn.Location = new System.Drawing.Point(81, 274);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(71, 30);
+            this.loginBtn.TabIndex = 80;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(263, 423);
             this.Controls.Add(this.appNameLabel);

@@ -32,7 +32,7 @@ namespace contact_tracing
 
         private void getJSONFile()
         {
-            string[] filePathToString = Directory.GetFiles(@"E:\Desktop\minutes-generator\JSON files\");
+            string[] filePathToString = Directory.GetFiles(@"E:\Desktop\resume-generator\resume-generator\JSON files\");
 
             foreach (string filePath in filePathToString)
             {
@@ -50,40 +50,48 @@ namespace contact_tracing
                 string jsonFile = File.ReadAllText(personFilePath);
 
                 JSON pdfInfo = JsonConvert.DeserializeObject<JSON>(jsonFile);
-                string jsonToTxtFile = @"E:\Desktop\minutes-generator\\TEXT Files\" + textBox1.Text + ".txt";
+                string jsonToTxtFile = @"E:\Desktop\resume-generator\resume-generator\TEXT Files\" + lastNameTextBox.Text + "_" + firstNameTextBox.Text + ".txt";
 
                 StreamWriter outputFile = new StreamWriter(jsonToTxtFile);
                 using (outputFile)
                 {
-                    outputFile.WriteLine(pdfInfo.date);
-                    outputFile.WriteLine(pdfInfo.time);
-                    outputFile.WriteLine(pdfInfo.platformOrLocation);
-                    outputFile.WriteLine(pdfInfo.teamName);
-                    outputFile.WriteLine(pdfInfo.calledBy);
-                    outputFile.WriteLine(pdfInfo.type);
-                    outputFile.WriteLine(pdfInfo.facilitator);
-                    outputFile.WriteLine(pdfInfo.noteTaker);
-                    outputFile.WriteLine(pdfInfo.timekeeper);
-                    outputFile.WriteLine(pdfInfo.attendees);
-                    outputFile.WriteLine(pdfInfo.pleaseRead);
-                    outputFile.WriteLine(pdfInfo.pleaseBring);
-                    outputFile.WriteLine(pdfInfo.agendaItem);
-                    outputFile.WriteLine(pdfInfo.presenter);
-                    outputFile.WriteLine(pdfInfo.actionItem1);
-                    outputFile.WriteLine(pdfInfo.actionItem2);
-                    outputFile.WriteLine(pdfInfo.actionItem3);
-                    outputFile.WriteLine(pdfInfo.personResponsible1);
-                    outputFile.WriteLine(pdfInfo.personResponsible2);
-                    outputFile.WriteLine(pdfInfo.personResponsible3);
-                    outputFile.WriteLine(pdfInfo.deadline1);
-                    outputFile.WriteLine(pdfInfo.deadline2);
-                    outputFile.WriteLine(pdfInfo.deadline3);
-                    outputFile.WriteLine(pdfInfo.conclusion1);
-                    outputFile.WriteLine(pdfInfo.conclusion2);
-                    outputFile.WriteLine(pdfInfo.conclusion3);
-                    outputFile.WriteLine(pdfInfo.observers);
-                    outputFile.WriteLine(pdfInfo.resources);
-                    outputFile.WriteLine(pdfInfo.specialNotes);
+
+                    outputFile.WriteLine(pdfInfo.yourName);
+                    outputFile.WriteLine(pdfInfo.yourPhone);
+                    outputFile.WriteLine(pdfInfo.yourEmail);
+                    outputFile.WriteLine(pdfInfo.yourAddress);
+                    outputFile.WriteLine(pdfInfo.yourWebsite);
+                    outputFile.WriteLine(pdfInfo.skill1);
+                    outputFile.WriteLine(pdfInfo.skill2);
+                    outputFile.WriteLine(pdfInfo.skill3);
+                    outputFile.WriteLine(pdfInfo.skill4);
+                    outputFile.WriteLine(pdfInfo.dateOfWork1);
+                    outputFile.WriteLine(pdfInfo.position1);
+                    outputFile.WriteLine(pdfInfo.companyName1);
+                    outputFile.WriteLine(pdfInfo.work1CompanySkill1);
+                    outputFile.WriteLine(pdfInfo.work1CompanySkill2);
+                    outputFile.WriteLine(pdfInfo.dateOfWork2);
+                    outputFile.WriteLine(pdfInfo.position2);
+                    outputFile.WriteLine(pdfInfo.companyName2);
+                    outputFile.WriteLine(pdfInfo.work2CompanySkill1);
+                    outputFile.WriteLine(pdfInfo.work2CompanySkill2);
+                    outputFile.WriteLine(pdfInfo.dateOfWork3);
+                    outputFile.WriteLine(pdfInfo.position3);
+                    outputFile.WriteLine(pdfInfo.companyName3);
+                    outputFile.WriteLine(pdfInfo.work3CompanySkill1);
+                    outputFile.WriteLine(pdfInfo.work3CompanySkill2);
+                    outputFile.WriteLine(pdfInfo.collegeLocation);
+                    outputFile.WriteLine(pdfInfo.collegeName);
+                    outputFile.WriteLine(pdfInfo.degreeObtained);
+                    outputFile.WriteLine(pdfInfo.SHSLocation);
+                    outputFile.WriteLine(pdfInfo.SHSName);
+                    outputFile.WriteLine(pdfInfo.strand);
+                    outputFile.WriteLine(pdfInfo.JHSLocation);
+                    outputFile.WriteLine(pdfInfo.JHSName);
+                    outputFile.WriteLine(pdfInfo.certificate1);
+                    outputFile.WriteLine(pdfInfo.certificate2);
+                    outputFile.WriteLine(pdfInfo.certificate3);
+
 
                     outputFile.Close();
                 }
@@ -101,10 +109,10 @@ namespace contact_tracing
         private void saveAsPDF_Click(object sender, EventArgs e)
         {
             string[] storeJSONInfo = savedInfoRichTextBox.Lines;
-            Document pdfDocument = new Document(@"E:\Desktop\minutes-generator\TEMPLATE\meeting-minutes-template.pdf");
+            Document pdfDocument = new Document(@"E:\Desktop\resume-generator\resume-generator\TEMPLATE\resume-template.pdf");
 
             //0
-            TextFragmentAbsorber textFragmentAbsorber0 = new TextFragmentAbsorber("Date");
+            TextFragmentAbsorber textFragmentAbsorber0 = new TextFragmentAbsorber("Your Name");
 
             
             pdfDocument.Pages.Accept(textFragmentAbsorber0);
@@ -118,7 +126,7 @@ namespace contact_tracing
             }
 
             //1
-            TextFragmentAbsorber textFragmentAbsorber1 = new TextFragmentAbsorber("Time");
+            TextFragmentAbsorber textFragmentAbsorber1 = new TextFragmentAbsorber("Your Phone");
 
            
             pdfDocument.Pages.Accept(textFragmentAbsorber1);
@@ -132,7 +140,7 @@ namespace contact_tracing
             }
 
             //2
-            TextFragmentAbsorber textFragmentAbsorber2 = new TextFragmentAbsorber("Location");
+            TextFragmentAbsorber textFragmentAbsorber2 = new TextFragmentAbsorber("Your Email");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber2);
@@ -146,7 +154,7 @@ namespace contact_tracing
             }
 
             //3
-            TextFragmentAbsorber textFragmentAbsorber3 = new TextFragmentAbsorber("Team");
+            TextFragmentAbsorber textFragmentAbsorber3 = new TextFragmentAbsorber("Your Address");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber3);
@@ -160,7 +168,7 @@ namespace contact_tracing
             }
 
             //4
-            TextFragmentAbsorber textFragmentAbsorber4 = new TextFragmentAbsorber("Enter meeting organizer here");
+            TextFragmentAbsorber textFragmentAbsorber4 = new TextFragmentAbsorber("Your Website URL");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber4);
@@ -174,7 +182,7 @@ namespace contact_tracing
             }
 
             //5
-            TextFragmentAbsorber textFragmentAbsorber5 = new TextFragmentAbsorber("Enter meeting type here");
+            TextFragmentAbsorber textFragmentAbsorber5 = new TextFragmentAbsorber("Skill 1");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber5);
@@ -188,7 +196,7 @@ namespace contact_tracing
             }
 
             //6
-            TextFragmentAbsorber textFragmentAbsorber6 = new TextFragmentAbsorber("Enter meeting facilitator here");
+            TextFragmentAbsorber textFragmentAbsorber6 = new TextFragmentAbsorber("Skill 2");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber6);
@@ -202,7 +210,7 @@ namespace contact_tracing
             }
 
             //7
-            TextFragmentAbsorber textFragmentAbsorber7 = new TextFragmentAbsorber("Enter note taker here");
+            TextFragmentAbsorber textFragmentAbsorber7 = new TextFragmentAbsorber("Skill 3");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber7);
@@ -216,7 +224,7 @@ namespace contact_tracing
             }
 
             //8
-            TextFragmentAbsorber textFragmentAbsorber8= new TextFragmentAbsorber("Enter meeting timekeeper here");
+            TextFragmentAbsorber textFragmentAbsorber8= new TextFragmentAbsorber("Skill 4");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber8);
@@ -230,7 +238,7 @@ namespace contact_tracing
             }
 
             //9
-            TextFragmentAbsorber textFragmentAbsorber9 = new TextFragmentAbsorber("Enter attendees here");
+            TextFragmentAbsorber textFragmentAbsorber9 = new TextFragmentAbsorber("Date of Work 1");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber9);
@@ -244,7 +252,7 @@ namespace contact_tracing
             }
 
             //10
-            TextFragmentAbsorber textFragmentAbsorber10 = new TextFragmentAbsorber("Enter reading list here");
+            TextFragmentAbsorber textFragmentAbsorber10 = new TextFragmentAbsorber("Position 1");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber10);
@@ -258,7 +266,7 @@ namespace contact_tracing
             }
 
             //11
-            TextFragmentAbsorber textFragmentAbsorber11 = new TextFragmentAbsorber("Enter items to bring here");
+            TextFragmentAbsorber textFragmentAbsorber11 = new TextFragmentAbsorber("Company Name 1");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber11);
@@ -272,7 +280,7 @@ namespace contact_tracing
             }
 
             //12
-            TextFragmentAbsorber textFragmentAbsorber12 = new TextFragmentAbsorber("Enter agenda item here");
+            TextFragmentAbsorber textFragmentAbsorber12 = new TextFragmentAbsorber("Work1CompanySkill1");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber12);
@@ -286,7 +294,7 @@ namespace contact_tracing
             }
 
             //13
-            TextFragmentAbsorber textFragmentAbsorber13 = new TextFragmentAbsorber("Enter presenter here");
+            TextFragmentAbsorber textFragmentAbsorber13 = new TextFragmentAbsorber("Work1CompanySkill2");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber13);
@@ -300,7 +308,7 @@ namespace contact_tracing
             }
 
             //14
-            TextFragmentAbsorber textFragmentAbsorber14 = new TextFragmentAbsorber("Enter action 1 here");
+            TextFragmentAbsorber textFragmentAbsorber14 = new TextFragmentAbsorber("Date Of Work 2");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber1);
@@ -314,7 +322,7 @@ namespace contact_tracing
             }
 
             //15
-            TextFragmentAbsorber textFragmentAbsorber15 = new TextFragmentAbsorber("Enter action 2 here");
+            TextFragmentAbsorber textFragmentAbsorber15 = new TextFragmentAbsorber("Position 2");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber15);
@@ -329,7 +337,7 @@ namespace contact_tracing
 
             //16
 
-            TextFragmentAbsorber textFragmentAbsorber16 = new TextFragmentAbsorber("Enter action 3 here");
+            TextFragmentAbsorber textFragmentAbsorber16 = new TextFragmentAbsorber("Company Name 2");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber16);
@@ -343,7 +351,7 @@ namespace contact_tracing
             }
 
             //17
-            TextFragmentAbsorber textFragmentAbsorber17 = new TextFragmentAbsorber("Enter person respnsible 1 here");
+            TextFragmentAbsorber textFragmentAbsorber17 = new TextFragmentAbsorber("Work2CompanySkill1");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber17);
@@ -357,7 +365,7 @@ namespace contact_tracing
             }
 
             //18
-            TextFragmentAbsorber textFragmentAbsorber18 = new TextFragmentAbsorber("Enter person responsible 2 here");
+            TextFragmentAbsorber textFragmentAbsorber18 = new TextFragmentAbsorber("Work2CompanySkill2");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber18);
@@ -371,7 +379,7 @@ namespace contact_tracing
             }
 
             //19
-            TextFragmentAbsorber textFragmentAbsorber19 = new TextFragmentAbsorber("Enter person responsible 3 here");
+            TextFragmentAbsorber textFragmentAbsorber19 = new TextFragmentAbsorber("Date of Work 3");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber19);
@@ -385,7 +393,7 @@ namespace contact_tracing
             }
 
             //20
-            TextFragmentAbsorber textFragmentAbsorber20 = new TextFragmentAbsorber("Enter deadline 1 here");
+            TextFragmentAbsorber textFragmentAbsorber20 = new TextFragmentAbsorber("Position 3");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber20);
@@ -399,7 +407,7 @@ namespace contact_tracing
             }
 
             //21
-            TextFragmentAbsorber textFragmentAbsorber21 = new TextFragmentAbsorber("Enter deadline 2 here");
+            TextFragmentAbsorber textFragmentAbsorber21 = new TextFragmentAbsorber("Company Name 3");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber21);
@@ -413,7 +421,7 @@ namespace contact_tracing
             }
 
             //22
-            TextFragmentAbsorber textFragmentAbsorber22 = new TextFragmentAbsorber("Enter deadline 3 here");
+            TextFragmentAbsorber textFragmentAbsorber22 = new TextFragmentAbsorber("Work3CompanySkill1");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber22);
@@ -427,7 +435,7 @@ namespace contact_tracing
             }
 
             //23
-            TextFragmentAbsorber textFragmentAbsorber23 = new TextFragmentAbsorber("Enter conclusion 1 here.");
+            TextFragmentAbsorber textFragmentAbsorber23 = new TextFragmentAbsorber("Work3CompanySkill2");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber23);
@@ -441,7 +449,7 @@ namespace contact_tracing
             }
 
             //24
-            TextFragmentAbsorber textFragmentAbsorber24 = new TextFragmentAbsorber("Enter conclusion 2 here.");
+            TextFragmentAbsorber textFragmentAbsorber24 = new TextFragmentAbsorber("College Location");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber24);
@@ -455,7 +463,7 @@ namespace contact_tracing
             }
 
             //25
-            TextFragmentAbsorber textFragmentAbsorber25 = new TextFragmentAbsorber("Enter conclusion 3 here.");
+            TextFragmentAbsorber textFragmentAbsorber25 = new TextFragmentAbsorber("College name");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber25);
@@ -469,7 +477,7 @@ namespace contact_tracing
             }
 
             //26
-            TextFragmentAbsorber textFragmentAbsorber26 = new TextFragmentAbsorber("Enter observers here.");
+            TextFragmentAbsorber textFragmentAbsorber26 = new TextFragmentAbsorber("Degree obtained");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber26);
@@ -483,7 +491,7 @@ namespace contact_tracing
             }
 
             //27
-            TextFragmentAbsorber textFragmentAbsorber27 = new TextFragmentAbsorber("Enter resources here.");
+            TextFragmentAbsorber textFragmentAbsorber27 = new TextFragmentAbsorber("SHS Location");
 
 
             pdfDocument.Pages.Accept(textFragmentAbsorber27);
@@ -497,21 +505,112 @@ namespace contact_tracing
             }
 
             //28
-            TextFragmentAbsorber textFragmentAbsorber28 = new TextFragmentAbsorber("Enter any special notes here.");
+            TextFragmentAbsorber textFragmentAbsorber28 = new TextFragmentAbsorber("SHS name");
 
 
-            pdfDocument.Pages.Accept(textFragmentAbsorber27);
+            pdfDocument.Pages.Accept(textFragmentAbsorber1);
 
-            TextFragmentCollection textFragmentCollection28 = textFragmentAbsorber27.TextFragments;
+            TextFragmentCollection textFragmentCollection28 = textFragmentAbsorber28.TextFragments;
 
 
-            foreach (TextFragment textFragment in textFragmentCollection27)
+            foreach (TextFragment textFragment in textFragmentCollection28)
             {
-                textFragment.Text = storeJSONInfo[27];
+                textFragment.Text = storeJSONInfo[28];
             }
 
-            pdfDocument.Save(@"E:\Desktop\minutes-generator\PDF Files\" + textBox1.Text + ".pdf");
+            //29
+            TextFragmentAbsorber textFragmentAbsorber29 = new TextFragmentAbsorber("Strand");
 
+
+            pdfDocument.Pages.Accept(textFragmentAbsorber29);
+
+            TextFragmentCollection textFragmentCollection29 = textFragmentAbsorber29.TextFragments;
+
+
+            foreach (TextFragment textFragment in textFragmentCollection29)
+            {
+                textFragment.Text = storeJSONInfo[29];
+            }
+
+            //30
+            TextFragmentAbsorber textFragmentAbsorber30 = new TextFragmentAbsorber("JHS Location");
+
+
+            pdfDocument.Pages.Accept(textFragmentAbsorber30);
+
+            TextFragmentCollection textFragmentCollection30 = textFragmentAbsorber30.TextFragments;
+
+
+            foreach (TextFragment textFragment in textFragmentCollection30)
+            {
+                textFragment.Text = storeJSONInfo[30];
+            }
+
+            //31
+            TextFragmentAbsorber textFragmentAbsorber31 = new TextFragmentAbsorber("JHS name");
+
+
+            pdfDocument.Pages.Accept(textFragmentAbsorber31);
+
+            TextFragmentCollection textFragmentCollection31 = textFragmentAbsorber31.TextFragments;
+
+
+            foreach (TextFragment textFragment in textFragmentCollection31)
+            {
+                textFragment.Text = storeJSONInfo[31];
+            }
+
+            //32
+            TextFragmentAbsorber textFragmentAbsorber32 = new TextFragmentAbsorber("Certificate 1");
+
+
+            pdfDocument.Pages.Accept(textFragmentAbsorber32);
+
+            TextFragmentCollection textFragmentCollection32 = textFragmentAbsorber32.TextFragments;
+
+
+            foreach (TextFragment textFragment in textFragmentCollection32)
+            {
+                textFragment.Text = storeJSONInfo[32];
+            }
+
+            //33
+            TextFragmentAbsorber textFragmentAbsorber33 = new TextFragmentAbsorber("Certificate 2");
+
+
+            pdfDocument.Pages.Accept(textFragmentAbsorber33);
+
+            TextFragmentCollection textFragmentCollection33 = textFragmentAbsorber33.TextFragments;
+
+
+            foreach (TextFragment textFragment in textFragmentCollection33)
+            {
+                textFragment.Text = storeJSONInfo[33];
+            }
+
+            //34
+            TextFragmentAbsorber textFragmentAbsorber34 = new TextFragmentAbsorber("Certificate 3");
+
+
+            pdfDocument.Pages.Accept(textFragmentAbsorber34);
+
+            TextFragmentCollection textFragmentCollection34 = textFragmentAbsorber34.TextFragments;
+
+
+            foreach (TextFragment textFragment in textFragmentCollection34)
+            {
+                textFragment.Text = storeJSONInfo[34];
+            }
+
+            pdfDocument.Save(@"E:\Desktop\resume-generator\resume-generator\PDF Files\" + lastNameTextBox.Text + "_" + firstNameTextBox.Text + ".pdf");
+        }
+
+        private void generateQRCode_Click(object sender, EventArgs e)
+        {
+            QRCodeGenerator QR = new QRCodeGenerator();
+            QRCodeData personInfo = QR.CreateQrCode(savedInfoRichTextBox.Text, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(personInfo);
+            generatedQRPictureBox.Image = code.GetGraphic(3);
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -519,9 +618,9 @@ namespace contact_tracing
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void lastNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == textBox1.Text)
+            if (lastNameTextBox.Text == lastNameTextBox.Text)
             {
                 seePersonInfoComboBox.Items.Clear();
                 getJSONFile();

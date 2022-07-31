@@ -8,35 +8,41 @@ namespace contact_tracing
 {
     internal class JSON
     {
-        public string date { get; set; }
-        public string time { get; set; }
-        public string platformOrLocation { get; set; }
-        public string teamName { get; set; }
-        public string calledBy { get; set; }
-        public string type { get; set; }
-        public string facilitator { get; set; }
-        public string noteTaker{ get; set; }
-        public string timekeeper { get; set; }
-        public string attendees { get; set; }
-        public string pleaseRead { get; set; }
-        public string pleaseBring { get; set; }
-        public string agendaItem { get; set; }
-        public string presenter { get; set; }
-        public string actionItem1 { get; set; }
-        public string actionItem2 { get; set; }
-        public string actionItem3 { get; set; }
-        public string personResponsible1 { get; set; }
-        public string personResponsible2 { get; set; }
-        public string personResponsible3 { get; set; }
-        public string deadline1 { get; set; }
-        public string deadline2 { get; set; }
-        public string deadline3 { get; set; }
-        public string conclusion1 { get; set; }
-        public string conclusion2 { get; set; }
-        public string conclusion3 { get; set; }
-        public string observers { get; set; }
-        public string resources { get; set; }
-        public string specialNotes { get; set; }
+        public string yourName { get; set; }
+        public string yourPhone { get; set; }
+        public string yourEmail { get; set; }
+        public string yourAddress { get; set; }
+        public string yourWebsite { get; set; }
+        public string skill1 { get; set; }
+        public string skill2 { get; set; }
+        public string skill3 { get; set; }
+        public string skill4 { get; set; }
+        public string dateOfWork1 { get; set; }
+        public string position1 { get; set; }
+        public string companyName1 { get; set; }
+        public string work1CompanySkill1 { get; set; }
+        public string work1CompanySkill2 { get; set; }
+        public string dateOfWork2 { get; set; }
+        public string position2 { get; set; }
+        public string companyName2 { get; set; }
+        public string work2CompanySkill1 { get; set; }
+        public string work2CompanySkill2 { get; set; }
+        public string dateOfWork3 { get; set; }
+        public string position3 { get; set; }
+        public string companyName3 { get; set; }
+        public string work3CompanySkill1 { get; set; }
+        public string work3CompanySkill2 { get; set; }
+        public string collegeLocation { get; set; }
+        public string collegeName { get; set; }
+        public string degreeObtained { get; set; }
+        public string SHSLocation { get; set; }
+        public string SHSName { get; set; }
+        public string strand { get; set; }
+        public string JHSLocation { get; set; }
+        public string JHSName { get; set; }
+        public string certificate1 { get; set; }
+        public string certificate2 { get; set; }
+        public string certificate3 { get; set; }
 
     }
 }
