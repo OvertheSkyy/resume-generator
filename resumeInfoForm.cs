@@ -35,45 +35,40 @@ namespace contact_tracing
 
             JSON resumeInfo = new JSON
             {
-                yourName = firstNameTextBox.Text + " " + middleInitialTextBox.Text + " " + lastNameTextBox.Text,
-                yourPhone = mobileNumberTextBox.Text,
-                yourEmail = emailTextBox.Text,
-                yourAddress = addressTextBox.Text,
-                yourWebsite = websiteURLTextBox.Text,
-                skill1 = skill1TextBox.Text,
-                skill2 = skill2TextBox.Text,
-                skill3 = skill3TextBox.Text,
-                skill4 = skill4TextBox.Text,
-                dateOfWork1 = dateOfWork1TextBox.Text,
-                position1 = work1PositionTextBox.Text,
-                companyName1 = companyName1TextBox.Text,
-                work1CompanySkill1 = work1CompanySkill1TB.Text,
-                work1CompanySkill2 = work1CompanySkill2TB.Text,
-                dateOfWork2 = dateOfWork2TextBox.Text,
-                position2 = work2PositionTextBox.Text,
-                companyName2 = companyName2TextBox.Text,
-                work2CompanySkill1 = work2CompanySkill1TB.Text,
-                work2CompanySkill2 = work2CompanySkill2TB.Text,
-                dateOfWork3 = dateOfWork3TextBox.Text,
-                position3 = work3PositionTextBox.Text,
-                companyName3 = companyName3TextBox.Text,
-                work3CompanySkill1 = work3CompanySkill1TB.Text,
-                work3CompanySkill2 = work3CompanySkill2TB.Text,
-                collegeLocation = collegeLocationTextBox.Text,
-                collegeName = collegeNameTextBox.Text,
-                degreeObtained = degreeObtainedTextBox.Text,
-                SHSLocation = SHSLocationTextBox.Text,
-                SHSName = SHSNameTextBox.Text,
-                strand = strandTextBox.Text,
-                JHSLocation = JHSLocationTextBox.Text,
-                JHSName = JHSNameTextBox.Text,
-                certificate1 = certificate1TextBox.Text,
-                certificate2 = certificate2TextBox.Text,
-                certificate3 = certificate3TextBox.Text,
-              };
+                date = textBox1.Text,
+                time = textBox2.Text,
+                platformOrLocation = textBox3.Text,
+                teamName = textBox4.Text,
+                calledBy = textBox5.Text,
+                type = textBox6.Text,
+                facilitator = textBox7.Text,
+                noteTaker = textBox28.Text,
+                timekeeper = textBox8.Text,
+                attendees = textBox9.Text,
+                pleaseRead = textBox10.Text,
+                pleaseBring = textBox11.Text,
+                agendaItem = textBox12.Text,
+                presenter = textBox13.Text,
+                actionItem1 = textBox14.Text,
+                actionItem2 = textBox15.Text,
+                actionItem3 = textBox16.Text,
+                personResponsible1 = textBox17.Text,
+                personResponsible2 = textBox18.Text,
+                personResponsible3 = textBox19.Text,
+                deadline1 = textBox20.Text,
+                deadline2 = textBox21.Text,
+                deadline3 = textBox21.Text,
+                conclusion1 = textBox22.Text,
+                conclusion2 = textBox23.Text,
+                conclusion3 = textBox24.Text,
+                observers = textBox25.Text,
+                resources = textBox26.Text,
+                specialNotes = textBox27.Text,
+
+            };
 
                 string JsonOutput = JsonConvert.SerializeObject(resumeInfo);
-                File.WriteAllText(@"E:\Desktop\resume-generator\resume-generator\JSON files\" + lastNameTextBox.Text + "_" + firstNameTextBox.Text + ".json", JsonOutput);
+                File.WriteAllText(@"E:\Desktop\minutes-generator\JSON files\" + textBox1.Text + ".json", JsonOutput);
             
         }
 
@@ -93,44 +88,7 @@ namespace contact_tracing
         private void clearAllBtn_Click(object sender, EventArgs e)
         {
 
-            firstNameTextBox.Text = "";
-            middleInitialTextBox.Text = "";
-            lastNameTextBox.Text = "";
-            mobileNumberTextBox.Text = "";
-            emailTextBox.Text = "";
-            addressTextBox.Text = "";
-            websiteURLTextBox.Text = "";
-            skill1TextBox.Text = "";
-            skill2TextBox.Text = "";
-            skill3TextBox.Text = "";
-            skill4TextBox.Text = "";
-            dateOfWork1TextBox.Text = "";
-            work1PositionTextBox.Text = "";
-            companyName1TextBox.Text = "";
-            work1CompanySkill1TB.Text = "";
-            work1CompanySkill2TB.Text = "";
-            dateOfWork2TextBox.Text = "";
-            work2PositionTextBox.Text = "";
-            companyName2TextBox.Text = "";
-            work2CompanySkill1TB.Text = "";
-            work2CompanySkill2TB.Text = "";
-            dateOfWork3TextBox.Text = "";
-            work3PositionTextBox.Text = "";
-            companyName3TextBox.Text = "";
-            work3CompanySkill1TB.Text = "";
-            work3CompanySkill2TB.Text = "";
-            collegeLocationTextBox.Text = "";
-            collegeNameTextBox.Text = "";
-            degreeObtainedTextBox.Text = "";
-            SHSLocationTextBox.Text = "";
-            SHSNameTextBox.Text = "";
-            strandTextBox.Text = "";
-            JHSLocationTextBox.Text = "";
-            JHSNameTextBox.Text = "";
-            certificate1TextBox.Text = "";
-            certificate2TextBox.Text = "";
-            certificate3TextBox.Text = "";
-
+            
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -145,6 +103,5 @@ namespace contact_tracing
         {
             Application.Run(new loginForm());
         }
-
     }
 }
